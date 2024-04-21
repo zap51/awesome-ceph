@@ -21,7 +21,7 @@ make_bucket: jayanth
 ```
 6. Create the topic
 ```
-# aws --endpoint http://172.19.1.200 sns create-topic --name bucketevents --attributes=file://topic.json --region=default
+# aws --endpoint http://172.19.1.200 sns create-topic --name bucketevents --attributes=file://topic-http-endpoint.json --region=default
 {
     "TopicArn": "arn:aws:sns:default::bucketevents"
 }
@@ -39,7 +39,7 @@ make_bucket: jayanth
 ```
 8. Create a notification configuration. This doesn't provide any output
 ```
-# aws --endpoint=http://172.19.1.200 s3api put-bucket-notification-configuration --bucket jayanth --notification-configuration file://notification.json
+# aws --endpoint=http://172.19.1.200 s3api put-bucket-notification-configuration --bucket jayanth --notification-configuration file://topic-http-notification.json
 ```
 9. Now try creating an object
 ```
