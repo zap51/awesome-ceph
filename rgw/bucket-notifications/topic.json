@@ -1,0 +1,5 @@
+{
+ "push-endpoint": "http://172.19.1.171:8000",
+ "verify-ssl": "False",
+ "persistent": "true"
+}
