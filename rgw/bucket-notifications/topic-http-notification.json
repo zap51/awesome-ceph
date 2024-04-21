@@ -1,0 +1,12 @@
+{
+    "TopicConfigurations": [
+        {
+            "Id": "HTTPNotification",
+            "TopicArn": "arn:aws:sns:default::bucketevents",
+            "Events": [
+                "s3:ObjectCreated:*",
+                "s3:ObjectRemoved:*"
+            ]
+        }
+    ]
+}
