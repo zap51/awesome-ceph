@@ -43,7 +43,7 @@ make_bucket: jayanth
 ```
 9. Now try creating an object
 ```
-s3cmd -c put notification.json s3://jayanth/
+s3cmd put notification.json s3://jayanth/
 ```
 10. See the HTTP Server logs
 ```
