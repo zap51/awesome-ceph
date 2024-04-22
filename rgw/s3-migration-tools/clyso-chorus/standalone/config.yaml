@@ -1,0 +1,95 @@
+log:
+    json: false
+    level: warn
+trace:
+    enabled: false
+    endpoint: ""
+metrics:
+    enabled: false
+    port: 9091
+redis:
+    address: 127.0.0.1:6379
+    password: ""
+    metaDB: 0
+    queueDB: 1
+    lockDB: 2
+    configDB: 3
+features:
+    versioning: false
+    tagging: false
+    acl: true
+    lifecycle: false
+    policy: false
+storage:
+    storages:
+        ceph--1:
+            address: http://172.19.1.200
+            credentials:
+                user1:
+                    accessKeyID: access
+                    secretAccessKey: secret
+            provider: Ceph
+            isMain: true
+            healthCheckInterval: 5s
+            httpTimeout: 1m
+            isSecure: false
+            rateLimit:
+                enabled: false
+                rpm: 0
+        ceph--2:
+            address: http://172.19.1.160
+            credentials:
+                user1:
+                    accessKeyID: access
+                    secretAccessKey: secret
+            provider: Ceph
+            isMain: false
+            healthCheckInterval: 5s
+            httpTimeout: 1m
+            isSecure: false
+            rateLimit:
+                enabled: false
+                rpm: 0
+    createRouting: true
+    createReplication: false
+concurrency: 10
+api:
+    enabled: true
+    grpcPort: 9670
+    httpPort: 9671
+    secure: false
+rclone:
+    memoryLimit:
+        enabled: true
+        limit: 300M
+        retryMin: 2s
+        retryMax: 20s
+    memoryCalc:
+        const: 0M
+        mul: 1.5
+    localFileLimit:
+        enabled: false
+        limit: 3
+        retryMin: 2s
+        retryMax: 20s
+    globalFileLimit:
+        enabled: false
+        limit: 3
+        retryMin: 2s
+        retryMax: 20s
+lock:
+    overlap: 2s
+uiPort: 9672
+proxy:
+    enabled: true
+    auth:
+        allowV2Signature: true
+        useStorage: ceph--1
+        custom: {}
+    port: 9669
+    address: http://localhost:9669
+    cors:
+        enabled: true
+        allowAll: false
+        whitelist:
+            - http://localhost:9672
