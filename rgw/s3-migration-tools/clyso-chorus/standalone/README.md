@@ -2,15 +2,15 @@
 
 1. Download and install `chorus` standalone and `chorctl`
 ```
-wget https://s3.clyso.com/chorus-artefacts/chorctl/latest/chorctl_Linux_x86_64.tar.gz
-tar xf chorctl_Linux_x86_64.tar.gz
-mv chorctl /usr/local/bin
+# wget https://s3.clyso.com/chorus-artefacts/chorctl/latest/chorctl_Linux_x86_64.tar.gz
+# tar xf chorctl_Linux_x86_64.tar.gz
+# mv chorctl /usr/local/bin
 
-wget https://s3.clyso.com/chorus-artefacts/standalone/latest/chorus_Linux_x86_64.tar.gz
-tar xf chorus_Linux_x86_64.tar.gz
-mv chorus /usr/local/bin
+# wget https://s3.clyso.com/chorus-artefacts/standalone/latest/chorus_Linux_x86_64.tar.gz
+# tar xf chorus_Linux_x86_64.tar.gz
+# mv chorus /usr/local/bin
 
-rm chorctl_Linux_x86_64.tar.gz chorus_Linux_x86_64.tar.gz
+# rm chorctl_Linux_x86_64.tar.gz chorus_Linux_x86_64.tar.gz
 ```
 
 2. Perform the configuration and start Chorus standalone
@@ -62,12 +62,12 @@ user1:buk:ceph--1->ceph--2     [##########] 100.0 %     268.2 MiB/268.2 MiB     
 
 6. Observe the same on the interactive dashboard
 ```
-chorctl dash
+# chorctl dash
 ```
 
 7. Going forward, all the S3 interaction must go via Chorus proxy so the events can be tracked. You still have a choice to either use Chorus proxy or the Chorus agent which uses bucket notifications instead
 ```
-s3cmd -c proxy-cfg put 10M s3://buk
+# s3cmd -c proxy-cfg put 10M s3://buk
 ```
 This should give an increase in the events which Chorus worker will eventually apply on the destination.
 
