@@ -71,9 +71,7 @@ user1:buk:ceph--1->ceph--2     [##########] 100.0 %     268.2 MiB/268.2 MiB     
 ```
 This should give an increase in the events which Chorus worker will eventually apply on the destination.
 
-<img width="864" alt="image" src="https://github.com/zap51/chorus-examples/assets/45934027/b8afede1-de89-4b0d-a301-c2b17c5a80d5">
-
-Checking the same on the destination should show that both are in sync.
+8. Checking the same on the destination should show that both are in sync.
 ```
 # chorctl check ceph--1 ceph--2 -b buk -u user1
 Checking files in bucket buk ...
