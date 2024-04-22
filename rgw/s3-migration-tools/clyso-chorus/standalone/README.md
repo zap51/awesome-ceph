@@ -16,9 +16,7 @@ rm chorctl_Linux_x86_64.tar.gz chorus_Linux_x86_64.tar.gz
 2. Perform the configuration and start Chorus standalone
 Ensure the configuration file is located at `~/.config/chorus/config.yaml` or pass the configuration file with `-c` option to the command `chorus`
 ```
-chorus
-```
-```
+# chorus
 _________ .__                               
 \_   ___ \|  |__   ___________ __ __  ______
 /    \  \/|  |  \ /  _ \_  __ \  |  \/  ___/
@@ -44,9 +42,7 @@ Storage list:
 
 3. Check lag between two buckets
 ```
-chorctl check ceph--1 ceph--2 -b buk -u user1
-```
-```
+# chorctl check ceph--1 ceph--2 -b buk -u user1
 Checking files in bucket buk ...
 🪣 BUCKET | Match	 | MissSrc	 | MissDst	 | Differ	 | Error
 ✅ buk... | 4      	 | 0      	 | 0      	 | 0      	 | 0  
@@ -54,14 +50,12 @@ Checking files in bucket buk ...
 
 4. Add a specific bucket to the replication job
 ```
-chorctl repl add -f ceph--1 -t ceph--2 -b buk -u user1
+# chorctl repl add -f ceph--1 -t ceph--2 -b buk -u user1
 ```
 
 5. Check if the job has been added and the progress. This should do the initial replication
 ```
-chorctl repl
-```
-```
+# chorctl repl
 NAME                           PROGRESS                 SIZE                    OBJECTS     EVENTS     PAUSED     LAG             AGE
 user1:buk:ceph--1->ceph--2     [##########] 100.0 %     268.2 MiB/268.2 MiB     4/4         0/0        false      17.155266ms     9m
 ```
@@ -81,9 +75,7 @@ This should give an increase in the events which Chorus worker will eventually a
 
 Checking the same on the destination should show that both are in sync.
 ```
-chorctl check ceph--1 ceph--2 -b buk -u user1
-```
-```
+# chorctl check ceph--1 ceph--2 -b buk -u user1
 Checking files in bucket buk ...
 🪣 BUCKET | Match	 | MissSrc	 | MissDst	 | Differ	 | Error
 ✅ buk... | 5      	 | 0      	 | 0      	 | 0      	 | 0    
