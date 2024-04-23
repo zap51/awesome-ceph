@@ -13,8 +13,7 @@
 # rm chorctl_Linux_x86_64.tar.gz chorus_Linux_x86_64.tar.gz
 ```
 
-2. Perform the configuration and start Chorus standalone
-Ensure the configuration file is located at `~/.config/chorus/config.yaml` or pass the configuration file with `-c` option to the command `chorus`
+2. Perform the configuration and start Chorus standalone. Ensure the configuration file is located at `~/.config/chorus/config.yaml` or pass the configuration file with `-c` option to the command `chorus`
 ```
 # chorus
 _________ .__                               
