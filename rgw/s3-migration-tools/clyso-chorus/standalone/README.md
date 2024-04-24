@@ -39,17 +39,17 @@ Storage list:
  - ceph--2: http://172.19.1.160
 ```
 
-3. Check lag between two buckets
+3. Add a specific bucket to the replication job
+```
+# chorctl repl add -f ceph--1 -t ceph--2 -b buk -u user1
+```
+
+4. Check lag between two buckets
 ```
 # chorctl check ceph--1 ceph--2 -b buk -u user1
 Checking files in bucket buk ...
 🪣 BUCKET | Match	 | MissSrc	 | MissDst	 | Differ	 | Error
 ✅ buk... | 4      	 | 0      	 | 0      	 | 0      	 | 0  
-```
-
-4. Add a specific bucket to the replication job
-```
-# chorctl repl add -f ceph--1 -t ceph--2 -b buk -u user1
 ```
 
 5. Check if the job has been added and the progress. This should do the initial replication
